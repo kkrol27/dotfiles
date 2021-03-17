@@ -1,0 +1,13 @@
+#!/bin/sh 
+
+night_mode() { 
+  for disp in $(xrandr | sed -n 's/^\([^ ]*\)\s*connected.*/\1/p'); do 
+    xrandr --output $disp --gamma $1
+  done
+} 
+
+case $1 in 
+  off) night_mode 1:1:1 ;; 
+  *) night_mode 1.00000000:0.90198230:0.81465502 ;;
+esac
+
