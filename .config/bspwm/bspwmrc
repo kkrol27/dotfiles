@@ -1,0 +1,54 @@
+#!/bin/sh
+
+# This computer's hostname
+HOST="$(hostname)"
+
+
+### Application Autostart ###
+
+xfsettingsd --disable-wm-check --daemon
+
+/usr/bin/light-locker --no-late-locking --lock-on-suspend --lock-on-lid &
+/usr/bin/thunar --daemon &
+/usr/bin/xfce4-panel --disable-wm-check &
+/usr/bin/xfce4-power-manager --daemon &
+/usr/lib/xfce4/notifyd/xfce4-notifyd &
+/usr/lib/xfce-polkit/xfce-polkit &
+
+blueman-applet &
+nm-applet &
+
+PICOM_OPTS="-b"
+[ "$HOST" = "jezero" ] && PICOM_OPTS="$PICOM_OPTS --xrender-sync-fence"
+
+picom ${PICOM_OPTS} &
+sxhkd &
+unclutter --timeout 5 --jitter --fork &
+
+xwallpaper --zoom ~/.config/wallpaper
+
+
+### BSPWM Configuration ###
+
+bspc monitor -d I II III IV V VI VII VIII IX
+
+bspc config normal_border_color   \#6889a5 # normal:blue darkened 10%
+bspc config active_border_color   \#b39214 # normal:yellow darkened 20%
+bspc config focused_border_color  \#cdac2e # normal:yellow darkened 10%
+bspc config presel_feedback_color \#b39213
+
+bspc config top_padding  26
+bspc config border_width 2
+bspc config window_gap   12
+bspc config split_ratio  0.5
+
+bspc config borderless_monocle    false
+bspc config gapless_monocle       false
+bspc config focus_follows_pointer true
+
+bspc rule --add "Matplotlib" state=floating
+bspc rule --add "MATLAB R2020b - academic use" state=floating
+bspc rule --add "scratchpad-st" state=floating
+bspc rule --add "Spotify" state=floating center=on
+bspc rule --add "Xfce4-*-settings" state=floating
+

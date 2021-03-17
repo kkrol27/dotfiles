@@ -1,0 +1,39 @@
+
+alias dotfiles='git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME'
+
+alias diff='diff --color=auto'
+alias grep='grep --color=auto'
+alias ls='ls --color=auto --group-directories-first'
+alias nmcli='nmcli --color yes'
+alias vim=nvim
+
+man() {
+	LESS_TERMCAP_md=$'\e[01;31m' \
+	LESS_TERMCAP_me=$'\e[0m' \
+	LESS_TERMCAP_se=$'\e[0m' \
+	LESS_TERMCAP_so=$'\e[01;44;33m' \
+	LESS_TERMCAP_ue=$'\e[0m' \
+	LESS_TERMCAP_us=$'\e[01;32m' \
+	command man "$@"
+}
+
+function desktop-pull() {
+  if [ "$#" -lt 1 ]; then
+    echo "USAGE: $0 IP [RYSNC OPTIONS]" >&2
+    return
+  fi
+
+  rsync -avz --filter=":- .rsyncignore" ${@:2} kkrol@$1:~/Documents/ ~/Documents
+  rsync -avz --filter=":- .rsyncignore" ${@:2} kkrol@$1:~/Pictures/ ~/Pictures
+}
+
+function desktop-push() {
+  if [ "$#" -lt 1 ]; then
+    echo "USAGE: $0 IP [RSYNC OPTIONS]" >&2
+    return
+  fi
+
+  rsync -avz --filter=":- .rsyncignore" ${@:2} ~/Documents/ kkrol@$1:~/Documents
+  rsync -avz --filter=":- .rsyncignore" ${@:2} ~/Pictures/ kkrol@$1:~/Pictures
+}
+

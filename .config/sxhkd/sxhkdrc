@@ -1,0 +1,67 @@
+
+super + End
+	bspwm-power-menu
+
+super + c
+	bspwm-code-menu
+
+super + l
+	light-locker-command -l
+
+super + p
+	dmenu_run
+
+super + Escape
+	pkill -USR1 -x sxhkd
+
+super + Return
+    st
+
+
+### Application Commands ###
+
+super + m
+	bspc desktop -l next
+
+super + {_,shift + }q
+	bspc node -{c,k}
+
+super + {f,space}
+	bspc node -t '~{fullscreen,floating}'
+
+super + {period,comma}
+	bspc node -f {next,prev}.local.!hidden.window
+
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+super + alt + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+
+### Workspace Commands ###
+
+super + {_,shift +} {1-9}
+	bspc {desktop -f, node -d} ^{1-9}
+
+super + {_,shift +} bracket{left,right}
+	bspc {desktop -f, node -d} {prev,next}.local
+
+
+### Scratchpad Applications ###
+
+super + s
+	bspwm-scratchpad Spotify spotify
+
+super + t
+	bspwm-scratchpad "scratchpad-st" "st -g 140x40 -c scratchpad-st -t scratchpad-st"
+

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+case "$(echo "Lock\nLogout\nSuspend\nHibernate\nShutdown\nRestart" | \
+		dmenu -i -p "Power:")" in
+	Lock) exec light-locker-command -l ;;
+	Logout) exec bspc quit ;;
+	Suspend) exec systemctl suspend ;;
+	Hibernate) exec systemctl hibernate ;;
+	Shutdown) exec systemctl poweroff ;;
+	Restart) exec systemctl reboot ;;
+esac
+

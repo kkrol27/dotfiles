@@ -1,0 +1,85 @@
+
+#define GruvboxDark
+// #define TomorrowNight
+
+#ifdef GruvboxDark
+  #define Foreground  #ebdbb2
+  #define Background  #32302f
+  #define CursorColor Foreground
+
+  #define Black         #282828
+  #define Red           #cc241d
+  #define Green         #98971a
+  #define Yellow        #d79921
+  #define Blue          #458588
+  #define Magenta       #b16286
+  #define Cyan          #689d6a
+  #define White         #a89984
+  #define BrightBlack   #928374
+  #define BrightRed     #fb4934
+  #define BrightGreen   #b8bb26
+  #define BrightYellow  #fabd2f
+  #define BrightBlue    #83a598
+  #define BrightMagneta #d3869b
+  #define BrightCyan    #8ec07c
+  #define BrightWhite   #ebdbb2
+
+  #define DmenuBackground          Background
+  #define DmenuForeground          Foreground
+  #define DmenuSelectionBackground BrightBlack
+  #define DmenuSelectionForeground BrightYellow
+#endif
+
+#ifdef TomorrowNight
+  #define Foreground  #c5c8c6
+  #define Background  #1d1f21
+  #define CursorColor #aeafad
+
+  #define Black         #000000
+  #define Red           #912226
+  #define Green         #778900
+  #define Yellow        #ae7b00
+  #define Blue          #1d2594
+  #define Magenta       #682a9b
+  #define Cyan          #2b6651
+  #define White         #929593
+  #define BrightBlack   #666666
+  #define BrightRed     #cc6666
+  #define BrightGreen   #b5bd68
+  #define BrightYellow  #f0c674
+  #define BrightBlue
+  #define BrightMagenta #b294bb
+  #define BrightCyan    #8abeb7
+  #define BrightWhite   #ecebec
+
+  #define DmenuBackground          Background
+  #define DmenuForeground          Foreground
+  #define DmenuSelectionBackground BrightBlack
+  #define DmenuSelectionForeground BrightYellow
+#endif
+
+*foreground:  Foreground
+*background:  Background
+*cursorColor: CursorColor
+*color0:      Black
+*color1:      Red
+*color2:      Green
+*color3:      Yellow
+*color4:      Blue
+*color5:      Magenta
+*color6:      Cyan
+*color7:      White
+*color8:      BrightBlack
+*color9:      BrightRed
+*color10:     BrightGreen
+*color11:     BrightYellow
+*color12:     BrightBlue
+*color13:     BrightMagneta
+*color14:     BrightCyan
+*color15:     BrightWhite
+
+*dmenu.background:    DmenuBackground
+*dmenu.foreground:    DmenuForeground
+*dmenu.selbackground: DmenuSelectionBackground
+*dmenu.selforeground: DmenuSelectionForeground
+
