@@ -48,7 +48,6 @@ bspc config focus_follows_pointer true
 
 bspc rule --add "Matplotlib" state=floating
 bspc rule --add "MATLAB R2020b - academic use" state=floating
-bspc rule --add "scratchpad-st" state=floating
+bspc rule --add "scratchpad-st" state=floating center=on
 bspc rule --add "Spotify" state=floating center=on
-bspc rule --add "Xfce4-*-settings" state=floating
 
