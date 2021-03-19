@@ -1,6 +1,10 @@
 
+! Theme selections
+
 #define GruvboxDark
 // #define TomorrowNight
+
+! Themes
 
 #ifdef GruvboxDark
   #define Foreground  #ebdbb2
@@ -20,13 +24,10 @@
   #define BrightGreen   #b8bb26
   #define BrightYellow  #fabd2f
   #define BrightBlue    #83a598
-  #define BrightMagneta #d3869b
+  #define BrightMagenta #d3869b
   #define BrightCyan    #8ec07c
   #define BrightWhite   #ebdbb2
 
-  #define DmenuBackground          Background
-  #define DmenuForeground          Foreground
-  #define DmenuSelectionBackground BrightBlack
   #define DmenuSelectionForeground BrightYellow
 #endif
 
@@ -47,16 +48,18 @@
   #define BrightRed     #cc6666
   #define BrightGreen   #b5bd68
   #define BrightYellow  #f0c674
-  #define BrightBlue
+  #define BrightBlue    #81a2be
   #define BrightMagenta #b294bb
   #define BrightCyan    #8abeb7
   #define BrightWhite   #ecebec
 
-  #define DmenuBackground          Background
-  #define DmenuForeground          Foreground
-  #define DmenuSelectionBackground BrightBlack
-  #define DmenuSelectionForeground BrightYellow
+  #define BspwmActiveBorder #a8bfd2
+  #define BspwmPreselColor  BspwmActiveBorder
+
+  #define DmenuSelectionBackground #444444
 #endif
+
+! Terminal colors
 
 *foreground:  Foreground
 *background:  Background
@@ -74,9 +77,50 @@
 *color10:     BrightGreen
 *color11:     BrightYellow
 *color12:     BrightBlue
-*color13:     BrightMagneta
+*color13:     BrightMagenta
 *color14:     BrightCyan
 *color15:     BrightWhite
+
+! Bspwm
+
+#ifndef BspwmNormalBorder
+  #define BspwmNormalBorder BrightBlack
+#endif
+
+#ifndef BspwmActiveBorder
+  #define BspwmActiveBorder BrightBlue
+#endif
+
+#ifndef BspwmFocussedBorder
+  #define BspwmFocusedBorder BrightBlue
+#endif
+
+#ifndef BspwmPreselColor
+  #define BspwmPreselColor BrightBlack
+#endif
+
+*bspwm.normal_border_color:   BspwmNormalBorder
+*bspwm.active_border_color:   BspwmActiveBorder
+*bspwm.focused_border_color:  BspwmFocusedBorder
+*bspwm.presel_feedback_color: BspwmPreselColor
+
+! Dmenu
+
+#ifndef DmenuBackground
+  #define DmenuBackground Background
+#endif
+
+#ifndef DmenuForeground
+  #define DmenuForeground Foreground
+#endif
+
+#ifndef DmenuSelectionBackground
+  #define DmenuSelectionBackground BrightBlack
+#endif
+
+#ifndef DmenuSelectionForeground
+  #define DmenuSelectionForeground BrightBlue
+#endif
 
 *dmenu.background:    DmenuBackground
 *dmenu.foreground:    DmenuForeground
