@@ -5,5 +5,7 @@ find ~/git -type d -name .git | sed ''
 repository=$(find ~/git/ -type d -name .git | \
 	     sed -e "s/\\/home\\/kkrol\\/git\\///" -e "s/\\/.git//" | \
              dmenu -p "Repository:" -l 15) && \
-	     exec code "$HOME/git/$repository"
+	     [ -d "$HOME/git/$repository" ] && \
+	     code "$HOME/git/$repository" && \
+	     exec st -d "$HOME/git/$repository"
 
