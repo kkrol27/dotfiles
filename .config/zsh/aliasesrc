@@ -1,11 +1,9 @@
 
-alias dotfiles='git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME'
-
 alias diff='diff --color=auto'
+alias dotfiles='git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME'
 alias grep='grep --color=auto'
 alias ls='ls --color=auto --group-directories-first'
 alias nmcli='nmcli --color yes'
-alias vim=nvim
 
 man() {
 	LESS_TERMCAP_md=$'\e[01;31m' \
