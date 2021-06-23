@@ -5,9 +5,6 @@ super + End
 super + c
 	bspwm-code-menu
 
-super + l
-	light-locker-command -l
-
 super + p
 	dmenu_run
 
