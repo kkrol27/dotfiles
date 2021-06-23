@@ -2,7 +2,7 @@
 
 find ~/git -type d -name .git | sed ''
 
-repository=$(find ~/git/ -type d -name .git | \
+repository=$(find ~/git/ -maxdepth 3 -type d -name .git | \
 	     sed -e "s/\\/home\\/kkrol\\/git\\///" -e "s/\\/.git//" | \
              dmenu -p "Repository:" -l 15) && \
 	     [ -d "$HOME/git/$repository" ] && \
