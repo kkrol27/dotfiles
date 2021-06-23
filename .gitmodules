@@ -1,3 +1,0 @@
-[submodule ".local/src/spotifywm"]
-	path = .local/src/spotifywm
-	url = git@github.com:dasJ/spotifywm.git
