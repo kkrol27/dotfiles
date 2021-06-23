@@ -23,7 +23,7 @@ PICOM_OPTS="-b"
 
 picom ${PICOM_OPTS} &
 sxhkd &
-unclutter --timeout 5 --jitter --fork &
+unclutter --timeout 5 --jitter 3 --fork &
 
 xwallpaper --zoom ~/.config/wallpaper
 xsetroot -cursor_name left_ptr
@@ -41,7 +41,6 @@ bspc config top_padding  26
 bspc config border_width 2
 bspc config window_gap   12
 bspc config split_ratio  0.5
-
 
 bspc config borderless_monocle    false
 bspc config gapless_monocle       false
