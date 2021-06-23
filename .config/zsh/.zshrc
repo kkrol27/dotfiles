@@ -8,7 +8,7 @@ SAVEHIST=10000
 HISTFILE="$ZDOTDIR/history"
 
 # Update zsh completions
-#fpath=(path/to/zsh-completions/src $fpath) 
+fpath=(~/.local/src/zsh-completions/src $fpath)
 
 # Basic auto/tab completion (including hidden files)
 autoload -Uz compinit
@@ -57,6 +57,6 @@ source "$ZDOTDIR/promptrc"
 
 # Enable autosuggestions and syntax highlighting
 bindkey '^x' autosuggest-accept
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.local/src/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.local/src/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
